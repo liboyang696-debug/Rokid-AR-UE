@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Rokid mobile plugin additions-->
+<root xmlns:android="http://schemas.android.com/apk/res/android">
+	<init>
+	</init>
+	<!-- optional updates applied to AndroidManifest.xml -->
+	<androidManifestUpdates>
+		<addElements tag="application">
+			<!-- add for station2 -->
+			<uses-library android:name="com.rokid.sdk.st2.gesture" android:required="false" />
+			<!-- set to 3D application -->
+			<meta-data android:name="com.rokid.sdk" android:value="uxr"/>
+			<meta-data android:name="com.rokid.uxr.application.mode" android:value="3d" />
+			<meta-data android:name="android.allow_multiple_resumed_activities" android:value="true"/>
+			<meta-data android:name="com.rokid.engine" android:value="ue"/>
+		</addElements>
+
+		<addElements tag="manifest">
+			<queries>
+				<package android:name="com.rokid.openxr.runtime" />
+			</queries>
+		</addElements>
+
+	</androidManifestUpdates>
+
+	<!-- optional additions to proguard -->
+	<proguardAdditions>
+		<insert>
+			-keep class android.app.** {*;}
+		</insert>
+	</proguardAdditions>
+
+	<!-- optional files or directories to copy to Intermediate/Android/APK -->
+	<resourceCopies>
+		<isArch arch="arm64-v8a">
+			<log text="Copying libopenxr_loader.so"/>
+			<copyFile src="$S(PluginDir)/RokidForOpenXRLoader/Lib/arm64-v8a/libopenxr_loader.so"
+						  dst="$S(BuildDir)/libs/arm64-v8a/libopenxr_loader.so"/>
+		</isArch>
+	</resourceCopies>
+
+</root>

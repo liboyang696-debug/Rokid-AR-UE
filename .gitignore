@@ -1,0 +1,45 @@
+# Unreal Engine generated files
+.vs/
+DerivedDataCache/
+Intermediate/
+Saved/
+Binaries/
+Build/
+Android_ASTC/
+
+# Generated project files
+*.sln
+*.VC.db
+*.VC.opendb
+*.opensdf
+*.sdf
+*.suo
+*.user
+*.userprefs
+*.aps
+*.ncb
+*.opendb
+*.xcodeproj/
+*.xcworkspace/
+
+# Build products and debug symbols
+*.apk
+*.aab
+*.obb
+*.pak
+*.ucas
+*.utoc
+*.pdb
+*.ilk
+*.obj
+*.log
+
+# OS/editor noise
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Keep plugin source, ignore plugin generated files
+Plugins/**/Binaries/
+Plugins/**/Intermediate/
+Plugins/**/Saved/
